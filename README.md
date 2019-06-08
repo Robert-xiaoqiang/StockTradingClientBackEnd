@@ -16,7 +16,7 @@
   }
   ```
 
-- Resposne
+- Response
 
 ```Json
 
