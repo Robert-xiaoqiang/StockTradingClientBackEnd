@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Record implements Serializable{
     @Column(name = "record_id")
     @Id
-    private int Id;
+    private int record_id;
     @Column(name = "fund_id")
     private String fundId;
     @Column(name = "stock_id")
@@ -36,6 +36,10 @@ public class Record implements Serializable{
         return amount;
     }
 
+    public int getRecord_id() {
+        return record_id;
+    }
+
     public long getBuy() {
         return buy;
     }
@@ -44,12 +48,12 @@ public class Record implements Serializable{
         return state;
     }
 
-    public int getId() {
-        return Id;
-    }
-
     public String getFundId() {
         return fundId;
+    }
+
+    public String getRecordTimestamp() {
+        return recordTimestamp;
     }
 
     public String getStockId() {
@@ -64,34 +68,28 @@ public class Record implements Serializable{
         this.buy = buy;
     }
 
+    public void setFundId(String fundId) {
+        this.fundId = fundId;
+    }
 
     public void setPrice(double price) {
         this.price = price;
     }
 
+    public void setRecord_id(int record_id) {
+        this.record_id = record_id;
+    }
+
+    public void setRecord_timestamp(String recordTimestamp) {
+        this.recordTimestamp = recordTimestamp;
+    }
 
     public void setState(long state) {
         this.state = state;
     }
 
-    public String getRecordTimestamp() {
-        return recordTimestamp;
-    }
-
-    public void setRecordTimestamp(String recordTimestamp) {
-        this.recordTimestamp = recordTimestamp;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public void setStockId(String stockId) {
+    public void setStock_id(String stockId) {
         this.stockId = stockId;
     }
 
-    public void setFundId(String fundId) {
-        this.fundId = fundId;
-    }
 }
-
