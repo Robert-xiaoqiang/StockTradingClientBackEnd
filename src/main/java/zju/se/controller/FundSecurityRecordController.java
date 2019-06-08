@@ -27,7 +27,7 @@ public class FundSecurityRecordController {
         //String securityId = fs.getSecurityId();
         SecurityStock ss = securityStockRepository.findBySecurityId("11").orElse(null);
 
-        List<Record> lr = recordRepository.findByFundId("111");
+        List<Record> lr = recordRepository.findAllByFundId("111");
         return lr;
     }
 }
