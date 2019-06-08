@@ -12,17 +12,17 @@ import javax.persistence.Table;
 public class Record implements Serializable{
     @Column(name = "record_id")
     @Id
-    private int record_id;
+    private int Id;
     @Column(name = "fund_id")
-    private String fund_id;
+    private String fundId;
     @Column(name = "stock_id")
-    private String stock_id;
+    private String stockId;
     @Column(name = "buy")
     private long buy;
     @Column(name = "amount")
     private int amount;
-    @Column(name = "record_timesatmp")
-    private String record_timestamp;
+    @Column(name = "record_timestamp")
+    private String recordTimestamp;
     @Column(name = "price")
     private double price;
     @Column(name = "state")
@@ -36,10 +36,6 @@ public class Record implements Serializable{
         return amount;
     }
 
-    public int getRecord_id() {
-        return record_id;
-    }
-
     public long getBuy() {
         return buy;
     }
@@ -48,16 +44,16 @@ public class Record implements Serializable{
         return state;
     }
 
-    public String getFund_id() {
-        return fund_id;
+    public int getId() {
+        return Id;
     }
 
-    public String getRecord_timestamp() {
-        return record_timestamp;
+    public String getFundId() {
+        return fundId;
     }
 
-    public String getStock_id() {
-        return stock_id;
+    public String getStockId() {
+        return stockId;
     }
 
     public void setAmount(int amount) {
@@ -68,28 +64,34 @@ public class Record implements Serializable{
         this.buy = buy;
     }
 
-    public void setFund_id(String fund_id) {
-        this.fund_id = fund_id;
-    }
 
     public void setPrice(double price) {
         this.price = price;
     }
 
-    public void setRecord_id(int record_id) {
-        this.record_id = record_id;
-    }
-
-    public void setRecord_timestamp(String record_timestamp) {
-        this.record_timestamp = record_timestamp;
-    }
 
     public void setState(long state) {
         this.state = state;
     }
 
-    public void setStock_id(String stock_id) {
-        this.stock_id = stock_id;
+    public String getRecordTimestamp() {
+        return recordTimestamp;
     }
 
+    public void setRecordTimestamp(String recordTimestamp) {
+        this.recordTimestamp = recordTimestamp;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public void setStockId(String stockId) {
+        this.stockId = stockId;
+    }
+
+    public void setFundId(String fundId) {
+        this.fundId = fundId;
+    }
 }
+

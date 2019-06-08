@@ -1,9 +1,6 @@
 package zju.se.modelandrepository;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -12,6 +9,7 @@ public class SecurityStock implements Serializable {
     private final static long serialVersionID = 1l;
     @Column(name = "id")
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
     @Column(name = "security_id", nullable = false)
