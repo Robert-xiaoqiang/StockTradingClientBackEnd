@@ -14,15 +14,15 @@ public class Record implements Serializable{
     @Id
     private int record_id;
     @Column(name = "fund_id")
-    private String fund_id;
+    private String fundId;
     @Column(name = "stock_id")
-    private String stock_id;
+    private String stockId;
     @Column(name = "buy")
     private long buy;
     @Column(name = "amount")
     private int amount;
-    @Column(name = "record_timesatmp")
-    private String record_timestamp;
+    @Column(name = "record_timestamp")
+    private String recordTimestamp;
     @Column(name = "price")
     private double price;
     @Column(name = "state")
@@ -48,16 +48,16 @@ public class Record implements Serializable{
         return state;
     }
 
-    public String getFund_id() {
-        return fund_id;
+    public String getFundId() {
+        return fundId;
     }
 
-    public String getRecord_timestamp() {
-        return record_timestamp;
+    public String getRecordTimestamp() {
+        return recordTimestamp;
     }
 
-    public String getStock_id() {
-        return stock_id;
+    public String getStockId() {
+        return stockId;
     }
 
     public void setAmount(int amount) {
@@ -68,8 +68,8 @@ public class Record implements Serializable{
         this.buy = buy;
     }
 
-    public void setFund_id(String fund_id) {
-        this.fund_id = fund_id;
+    public void setFundId(String fundId) {
+        this.fundId = fundId;
     }
 
     public void setPrice(double price) {
@@ -80,16 +80,16 @@ public class Record implements Serializable{
         this.record_id = record_id;
     }
 
-    public void setRecord_timestamp(String record_timestamp) {
-        this.record_timestamp = record_timestamp;
+    public void setRecord_timestamp(String recordTimestamp) {
+        this.recordTimestamp = recordTimestamp;
     }
 
     public void setState(long state) {
         this.state = state;
     }
 
-    public void setStock_id(String stock_id) {
-        this.stock_id = stock_id;
+    public void setStock_id(String stockId) {
+        this.stockId = stockId;
     }
 
 }
