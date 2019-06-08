@@ -1,11 +1,13 @@
 package zju.se.modelandrepository;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Record {
+public class Record implements Serializable{
     @Column(name = "record_id")
     @Id
     private int record_id;
