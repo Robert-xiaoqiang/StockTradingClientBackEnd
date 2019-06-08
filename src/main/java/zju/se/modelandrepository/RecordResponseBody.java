@@ -23,7 +23,7 @@ public class RecordResponseBody implements Serializable {
         this.states.add(record.getState() == 0 ? "交易中" : "交易完成");
     }
 
-    public String getRecordTime() {
+    public String getTime() {
         return time;
     }
 
