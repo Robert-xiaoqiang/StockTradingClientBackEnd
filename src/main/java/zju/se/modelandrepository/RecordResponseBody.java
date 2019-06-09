@@ -9,6 +9,7 @@ import java.util.List;
 
 @ResponseBody
 public class RecordResponseBody implements Serializable {
+    private int key;
     private String sellOrBuy;
     private String time;
     private String stockId;
@@ -16,11 +17,20 @@ public class RecordResponseBody implements Serializable {
     private List<String> states = new ArrayList<>();
     public RecordResponseBody(Record record)
     {
-        this.sellOrBuy = String.valueOf(record.getBuy());
+        this.key = record.getRecord_id();
+        this.sellOrBuy = String.valueOf(record.getBuy() == 0 ? "Sell" : "Buy");
         this.time = record.getRecordTimestamp();
         this.stockId = record.getStockId();
         this.number = record.getAmount();
         this.states.add(record.getState() == 0 ? "交易中" : "交易完成");
+    }
+
+    public int getKey(){
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
     }
 
     public String getTime() {

@@ -28,6 +28,8 @@ public class RecordController {
                 .stream()
                 .map(r -> new RecordResponseBody(r))
                 .collect(Collectors.toList());
+        System.out.println(httpMessageBody.get("userinfo"));
+        System.out.println(records);
         return records;
     }
 }
