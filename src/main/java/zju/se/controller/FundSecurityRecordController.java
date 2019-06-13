@@ -2,7 +2,9 @@ package zju.se.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import zju.se.modelandrepository.*;
+import zju.se.modelandrepository.CapitalAccount;
+import zju.se.modelandrepository.CapitalAccountRepository;
+import zju.se.modelandrepository.SecurityStockRepository;
 import zju.se.modelandrepository.SecurityStockResponseBody;
 
 import java.util.ArrayList;
@@ -19,35 +21,47 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/api")
 public class FundSecurityRecordController {
+//  it has no life
+//    @Autowired
+//    private FundSecurityRepository fundSecurityRepository;
+//  it has no life
     @Autowired
-    private FundSecurityRepository fundSecurityRepository;
+    private CapitalAccountRepository capitalAccountRepository;
+
     @Autowired
     private SecurityStockRepository securityStockRepository;
-    @Autowired
-    private RecordRepository recordRepository;
 
     @RequestMapping(value = "/myStock", method = RequestMethod.POST)
     public List<SecurityStockResponseBody> getSecurity(
             @RequestBody Map<String, String> httpMessageBody
     )
     {
-        String securityId;
-        Optional<FundSecurity> ofs = fundSecurityRepository.findById(httpMessageBody.get("userinfo"));
-        FundSecurity fs = ofs.orElse(null);
-        if(fs == null){
+        String securityId = null;
+        List<CapitalAccount> lca = capitalAccountRepository.getAccount(httpMessageBody.get("userinfo"));
+
+        if(lca.size() == 0){
             return null;
         }
         else {
-            securityId = fs.getSecurityId();
-        }
-        List <SecurityStockResponseBody> ssrbs = securityStockRepository.findAllBySecurityId(securityId)
-                .stream()
-                .map(r -> new SecurityStockResponseBody(r))
-                .collect(Collectors.toList());
-        System.out.println(httpMessageBody.get("userinfo"));
-        System.out.println(securityId);
-        System.out.println(ssrbs.isEmpty());
+            securityId = lca.get(0).getSecurities_id();
 
-        return ssrbs;
+            List<SecurityStockResponseBody> ssrbs = securityStockRepository.findAllBySecurityId(securityId)
+                    .stream()
+                    .map(r ->
+                    {
+                        double currentPrice = 10.0;
+                        /**
+                         * TO-DO
+                         * which repository?
+                         */
+                        return new SecurityStockResponseBody(currentPrice, r);
+                    })
+                    .collect(Collectors.toList());
+            System.out.println(httpMessageBody.get("userinfo"));
+            System.out.println(securityId);
+            System.out.println(ssrbs.isEmpty());
+
+            return ssrbs;
+        }
     }
 }

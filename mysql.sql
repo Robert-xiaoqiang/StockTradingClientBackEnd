@@ -24,3 +24,5 @@ create table record (
      price decimal(10, 5),
      state tinyint(1)
 );
+
+insert into record values(1,'111','123456',0,10000,2019060819270808,20.12,1);

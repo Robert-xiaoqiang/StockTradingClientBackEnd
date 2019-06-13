@@ -17,13 +17,13 @@ public class SecurityStockResponseBody implements Serializable{
     private double price;
     private double cost;
     private double income;
-    public SecurityStockResponseBody(SecurityStock securityStock){
+    public SecurityStockResponseBody(double currentPrice, SecurityStock securityStock){
         this.key = String.valueOf(securityStock.getId());
         this.code = securityStock.getStockId();
         this.name = securityStock.getStockId();
         this.number = securityStock.getNum();
-        this.price = 10;//default,
-        this.cost = securityStock.getAvaPrice();
+        this.price = currentPrice;
+        this.cost = securityStock.getTotalPrice() / this.number;
         double x = this.number * (this.price - this.cost);
         this.income = Math.round(x*10)/10.00;
     }

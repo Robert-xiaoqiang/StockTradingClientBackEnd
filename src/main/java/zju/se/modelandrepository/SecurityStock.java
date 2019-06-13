@@ -12,14 +12,16 @@ public class SecurityStock implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
-    @Column(name = "security_id", nullable = false)
+    // we have an excellent group leader
+    @Column(name = "User_id", nullable = false)
     private String securityId;
 
     @Column(name = "stock_id", nullable = false)
     private String stockId;
 
-    @Column(name = "ava_price")
-    private double avaPrice;
+    // total price for this kind of stock
+    @Column(name = "price")
+    private double totalPrice;
 
     @Column(name = "num")
     private long num;
@@ -32,12 +34,12 @@ public class SecurityStock implements Serializable {
         Id = id;
     }
 
-    public double getAvaPrice() {
-        return avaPrice;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setAvaPrice(double avaPrice) {
-        this.avaPrice = avaPrice;
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public long getNum() {
