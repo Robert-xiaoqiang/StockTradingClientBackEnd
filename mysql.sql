@@ -14,6 +14,17 @@ create table security_stock(
     num integer/*持有数量*/
 );
 
+create table instructionset(
+     Number int(15)  auto_increment primary key,
+     ID char(20),
+     User_ID char(20),
+     Buy tinyint(1),
+     Amount int(15),
+     Date char(20),
+     Price decimal(10, 5),
+     State tinyint(1)
+);
+
 create table record (
      record_id int auto_increment primary key,
      fund_id varchar(255),
@@ -24,5 +35,54 @@ create table record (
      price decimal(10, 5),
      state tinyint(1)
 );
+drop table record;
 
-insert into record values(1,'111','123456',0,10000,2019060819270808,20.12,1);
+insert into instructionset values(1,'111','123456',0,10000,2019060819270808,20.12,1);
+
+insert into instructionset values(2,'A111','zfx',0,10000,2019060819270808,20.12,1);
+insert into instructionset values(3,'A112','zfx',0,10000,2019060819270808,20.12,1);
+
+
+CREATE TABLE `stock_inf` (
+  `stock_id` char(10) NOT NULL,
+  `stock_name` varchar(20) DEFAULT NULL,
+  `stock_price` decimal(7,2) DEFAULT NULL,
+  `upper_limit` decimal(5,2) DEFAULT NULL,
+  `lower_limit` decimal(5,2) DEFAULT NULL,
+  `stock_state` int(1) DEFAULT NULL,
+  `stock_authority` int(2) DEFAULT NULL,
+  PRIMARY KEY (`stock_id`)
+);
+alter table stock_inf add limit_state int(1);
+update stock_inf set limit_state=1;
+
+
+INSERT INTO `stock_inf` VALUES ('1', 'n1', 10.20, 10.22, 10.20, 1, 2, 1);
+INSERT INTO `stock_inf` VALUES ('2', 'n3', 13.20, 40.00, 40.00, 1, 2, 1);
+INSERT INTO `stock_inf` VALUES ('3', '国农科技', 1.50, 20.00, 10.00, 1, 2, 1);
+INSERT INTO `stock_inf` VALUES ('4', 'n4', 21.20, 20.30, 10.20, 1, 2, 1);
+INSERT INTO `stock_inf` VALUES ('5', 'n5', 12.20, 30.30, 14.20, 1, 2, 1);
+INSERT INTO `stock_inf` VALUES ('sh000002', 'Ａ股指数', 3047.74, 74.05, 32.88, 0, 9, 1);
+INSERT INTO `stock_inf` VALUES ('sh000003', 'Ｂ股指数', 290.53, 48.02, 1.95, 0, 10, 1);
+INSERT INTO `stock_inf` VALUES ('sh000004', '工业指数', 2277.72, 32.85, 94.74, 0, 6, 1);
+INSERT INTO `stock_inf` VALUES ('sh000005', '商业指数', 2701.59, 26.86, 78.34, 0, 5, 1);
+INSERT INTO `stock_inf` VALUES ('sh000006', '地产指数', 6632.15, 62.94, 44.64, 1, 9, 1);
+INSERT INTO `stock_inf` VALUES ('sh000007', '公用指数', 5090.37, 56.23, 62.99, 1, 2, 1);
+INSERT INTO `stock_inf` VALUES ('sh000008', '综合指数', 2806.37, 92.72, 19.98, 0, 8, 1);
+INSERT INTO `stock_inf` VALUES ('sh000009', '上证380', 4594.97, 74.76, 82.37, 0, 7, 1);
+INSERT INTO `stock_inf` VALUES ('sh000010', '上证180', 8168.02, 94.95, 75.16, 1, 8, 1);
+INSERT INTO `stock_inf` VALUES ('sh000011', '基金指数', 5986.66, 44.58, 43.80, 1, 5, 1);
+INSERT INTO `stock_inf` VALUES ('sh000012', '国债指数', 172.51, 70.86, 90.13, 0, 8, 1);
+INSERT INTO `stock_inf` VALUES ('sh000013', '企债指数', 231.34, 63.39, 25.35, 0, 3, 1);
+INSERT INTO `stock_inf` VALUES ('sh000015', '红利指数', 2709.28, 84.80, 54.69, 1, 7, 1);
+INSERT INTO `stock_inf` VALUES ('sh000016', '上证50', 2748.80, 42.46, 75.44, 0, 3, 1);
+INSERT INTO `stock_inf` VALUES ('sh000017', '新综指', 2457.37, 65.84, 6.08, 0, 3, 1);
+INSERT INTO `stock_inf` VALUES ('sh000018', '180金融', 5336.33, 25.21, 88.31, 1, 9, 1);
+INSERT INTO `stock_inf` VALUES ('sh000019', '治理指数', 1012.97, 90.94, 41.29, 0, 9, 1);
+INSERT INTO `stock_inf` VALUES ('sh000020', '中型综指', 1028.53, 29.88, 43.02, 1, 7, 1);
+INSERT INTO `stock_inf` VALUES ('sh000021', '180治理', 938.19, 26.30, 27.91, 0, 4, 1);
+INSERT INTO `stock_inf` VALUES ('sh000022', '沪公司债', 196.92, 28.26, 41.46, 1, 2, 1);
+INSERT INTO `stock_inf` VALUES ('sh000025', '180基建', 1718.33, 61.74, 98.97, 0, 4, 1);
+INSERT INTO `stock_inf` VALUES ('sh000026', '180资源', 2164.18, 57.50, 48.06, 0, 7, 1);
+INSERT INTO `stock_inf` VALUES ('sh000027', '180运输', 1118.12, 76.12, 20.14, 1, 5, 1);
+INSERT INTO `stock_inf` VALUES ('sh000028', '180成长', 3353.18, 61.92, 37.79, 0, 5, 1);

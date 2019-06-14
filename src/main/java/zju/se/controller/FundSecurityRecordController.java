@@ -2,10 +2,7 @@ package zju.se.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import zju.se.modelandrepository.CapitalAccount;
-import zju.se.modelandrepository.CapitalAccountRepository;
-import zju.se.modelandrepository.SecurityStockRepository;
-import zju.se.modelandrepository.SecurityStockResponseBody;
+import zju.se.modelandrepository.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +28,9 @@ public class FundSecurityRecordController {
     @Autowired
     private SecurityStockRepository securityStockRepository;
 
+    @Autowired
+    private Stock_infRepository stock_infRepository;
+
     @RequestMapping(value = "/myStock", method = RequestMethod.POST)
     public List<SecurityStockResponseBody> getSecurity(
             @RequestBody Map<String, String> httpMessageBody
@@ -50,11 +50,9 @@ public class FundSecurityRecordController {
                     .map(r ->
                     {
                         double currentPrice = 10.0;
-                        /**
-                         * TO-DO
-                         * which repository?
-                         */
-                        return new SecurityStockResponseBody(currentPrice, r);
+                        Optional<Stock_inf> optionalStock_inf = stock_infRepository.findById(r.getStockId());
+                        Stock_inf stock_inf = optionalStock_inf.orElse(null);
+                        return new SecurityStockResponseBody(stock_inf.getStock_price(), r);
                     })
                     .collect(Collectors.toList());
             System.out.println(httpMessageBody.get("userinfo"));

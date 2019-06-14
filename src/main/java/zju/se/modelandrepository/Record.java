@@ -8,24 +8,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "record")
+@Table(name = "instructionset")
 public class Record implements Serializable{
-    @Column(name = "record_id")
+    @Column(name = "Number")
     @Id
     private int record_id;
-    @Column(name = "fund_id")
+    @Column(name = "User_ID")
     private String fundId;
-    @Column(name = "stock_id")
+    @Column(name = "ID")
     private String stockId;
-    @Column(name = "buy")
+    @Column(name = "Buy")
     private long buy;
-    @Column(name = "amount")
+    @Column(name = "Amount")
     private int amount;
-    @Column(name = "record_timestamp")
+    @Column(name = "Date")
     private String recordTimestamp;
-    @Column(name = "price")
+    @Column(name = "Price")
     private double price;
-    @Column(name = "state")
+    @Column(name = "State")
     private long state;
 
     public double getPrice() {
