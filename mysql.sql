@@ -38,9 +38,62 @@ create table record (
 drop table record;
 
 insert into instructionset values(1,'111','123456',0,10000,2019060819270808,20.12,1);
-
 insert into instructionset values(2,'A111','zfx',0,10000,2019060819270808,20.12,1);
 insert into instructionset values(3,'A112','zfx',0,10000,2019060819270808,20.12,1);
+insert into instructionset values(4,'1','zfx',0,10000,2019061519270808,12.23,1);
+insert into instructionset values(5,'2','zfx',0,10000,2019061612270808,12.33,1);
+insert into instructionset values(6,'5','zfx',0,10000,2019052719270808,12.33,1);
+insert into instructionset values(7,'3','zfx',0,10000,2019061319270808,12.23,1);
+insert into instructionset values(8,'2','zfx',0,10000,2019051619270808,12.33,1);
+insert into instructionset values(9,'4','zfx',0,10000,2019061609270808,12.33,1);
+insert into instructionset values(10,'1','zfx',0,5000,2019061119270808,12.33,1);
+insert into instructionset values(11,'1','zfx',0,10000,2019061519270808,16.5,1);
+insert into instructionset values(12,'2','zfx',0,10000,2019061612270808,17.4,1);
+insert into instructionset values(13,'5','zfx',0,5000,2019052719270808,18.3,1);
+insert into instructionset values(14,'3','zfx',0,10000,2019061319270808,19.2,1);
+insert into instructionset values(15,'2','zfx',0,4000,2019051619270808,21.23,1);
+insert into instructionset values(16,'4','zfx',0,10000,2019061609270808,4.2,1);
+insert into instructionset values(17,'1','zfx',0,10000,2019061119270808,40.1,1);
+insert into instructionset values(18,'1','zfx',0,10000,2019061519270808,12.23,0);
+insert into instructionset values(19,'2','zfx',0,10000,2019061612270808,12.33,0);
+insert into instructionset values(20,'5','zfx',0,10000,2019052719270808,12.33,0);
+insert into instructionset values(21,'3','zfx',0,10000,2019061319270808,12.23,0);
+insert into instructionset values(22,'2','zfx',0,10000,2019051619270808,12.33,0);
+insert into instructionset values(23,'4','zfx',0,10000,2019061609270808,12.33,0);
+insert into instructionset values(24,'1','zfx',0,5000,2019061119270808,14.33,0);
+insert into instructionset values(25,'1','zfx',0,10000,2019061519270808,16.5,0);
+insert into instructionset values(26,'2','zfx',0,10000,2019061612270808,37.4,0);
+insert into instructionset values(27,'5','zfx',0,5000,2019052719270808,28.3,0);
+insert into instructionset values(28,'3','zfx',0,10000,2019061319270808,19.2,0);
+insert into instructionset values(29,'2','zfx',0,4000,2019051619270808,20.23,0);
+insert into instructionset values(30,'4','zfx',0,10000,2019061609270808,14.2,0);
+insert into instructionset values(31,'1','zfx',0,10000,2019061119270808,40.1,0);
+insert into instructionset values(32,'5','zfx',1,10000,2019052719270808,10.33,1);
+insert into instructionset values(33,'3','zfx',1,10000,2019061319270808,33.23,1);
+insert into instructionset values(34,'2','zfx',1,10000,2019051619270808,12.33,1);
+insert into instructionset values(35,'4','zfx',1,10000,2019061609270808,23.33,1);
+insert into instructionset values(36,'1','zfx',1,5000,2019061119270808,32.33,1);
+insert into instructionset values(37,'1','zfx',1,10000,2019061519270808,2.5,1);
+insert into instructionset values(38,'2','zfx',1,10000,2019061612270808,12.4,1);
+insert into instructionset values(39,'5','zfx',1,5000,2019052719270808,19.3,1);
+insert into instructionset values(40,'3','zfx',1,10000,2019061319270808,26.2,1);
+insert into instructionset values(41,'2','zfx',1,4000,2019051619270808,21.23,1);
+insert into instructionset values(42,'4','zfx',1,10000,2019061609270808,4.2,1);
+insert into instructionset values(43,'1','zfx',1,10000,2019061119270808,40.1,1);
+insert into instructionset values(44,'1','zfx',1,10000,2019061519270808,12.23,0);
+insert into instructionset values(45,'2','zfx',1,10000,2019061612270808,11.33,0);
+insert into instructionset values(46,'5','zfx',1,10000,2019052719270808,12.33,0);
+insert into instructionset values(47,'3','zfx',1,10000,2019061319270808,15.23,0);
+insert into instructionset values(48,'2','zfx',1,10000,2019051619270808,1.33,0);
+insert into instructionset values(49,'4','zfx',1,10000,2019061609270808,10.33,0);
+insert into instructionset values(50,'1','zfx',1,5000,2019061119270808,12.33,0);
+insert into instructionset values(51,'1','zfx',1,10000,2019061519270808,16.5,0);
+insert into instructionset values(52,'2','zfx',1,10000,2019061612270808,17.4,0);
+insert into instructionset values(53,'5','zfx',1,5000,2019052719270808,18.3,0);
+insert into instructionset values(54,'3','zfx',1,10000,2019061319270808,19.2,0);
+insert into instructionset values(55,'2','zfx',1,4000,2019051619270808,21.23,0);
+insert into instructionset values(56,'4','zfx',1,10000,2019061609270808,4.2,0);
+insert into instructionset values(57,'1','zfx',1,10000,2019061119270808,40.1,0);
 
 
 CREATE TABLE `stock_inf` (
@@ -52,7 +105,7 @@ CREATE TABLE `stock_inf` (
   `stock_state` int(1) DEFAULT NULL,
   `stock_authority` int(2) DEFAULT NULL,
   PRIMARY KEY (`stock_id`)
-);
+) character set = utf8;
 alter table stock_inf add limit_state int(1);
 update stock_inf set limit_state=1;
 
