@@ -8,12 +8,12 @@ create table fund_security(
 
 create table security_stock(
 	id integer auto_increment primary key, /*自增长主键、没用*/
-    security_id varchar(255) not null,/*证券账户id*/
+    User_id varchar(255) not null,/*证券账户id*/
     stock_id varchar(255) not null,/*股票id*/
-    ava_price decimal(10, 5),/*平均持有价格*/
+    price decimal(10, 5),/*平均持有价格*/
     num integer/*持有数量*/
 );
-insert into security_stock(security_id, stock_id, ava_price, num) values('zfxzfx', 'sh000002', 10.0, 100);
+insert into security_stock(User_id, stock_id, price, num) values('zfxzfx', 'sh000002', 10.0, 100);
 
 create table instructionset(
      Number int(15)  auto_increment primary key,
@@ -46,8 +46,8 @@ insert into instructionset values(3,'A112','zfx',0,10000,2019060819270808,20.12,
 
 insert into instructionset values(4,'A113','zfx',0,10000,2019060819270808,20.12,0);
 
-insert into instructionset values(4,'1','zfx',0,10000,2019061519270808,12.23,1);
-insert into instructionset values(5,'2','zfx',0,10000,2019061612270808,12.33,1);
+insert into instructionset values(5,'sh000002','zfx',0,10000,2019060819270808,20.12,0);
+
 insert into instructionset values(6,'5','zfx',0,10000,2019052719270808,12.33,1);
 insert into instructionset values(7,'3','zfx',0,10000,2019061319270808,12.23,1);
 insert into instructionset values(8,'2','zfx',0,10000,2019051619270808,12.33,1);
@@ -101,7 +101,6 @@ insert into instructionset values(55,'2','zfx',1,4000,2019051619270808,21.23,0);
 insert into instructionset values(56,'4','zfx',1,10000,2019061609270808,4.2,0);
 insert into instructionset values(57,'1','zfx',1,10000,2019061119270808,40.1,0);
 
-insert into instructionset values(5,'sh000002','zfx',0,10000,2019060819270808,20.12,0);
 
 CREATE TABLE `stock_inf` (
   `stock_id` char(10) NOT NULL,

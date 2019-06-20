@@ -55,7 +55,6 @@ public class FundSecurityRecordController {
                         return new SecurityStockResponseBody(stock_inf.getStock_price(), r);
                     })
                     .collect(Collectors.toList());
-            System.out.println(httpMessageBody.get("userinfo"));
             System.out.println(securityId);
             System.out.println(ssrbs.isEmpty());
 
