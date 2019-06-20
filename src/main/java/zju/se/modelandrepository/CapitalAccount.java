@@ -3,12 +3,15 @@ package zju.se.modelandrepository;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
+@Table(name = "capital_account")
 public class CapitalAccount {
     @Id
-    private String user_id;
+    @Column(name = "user_id")
+    private String userId;
     private String securities_id;
     private String login_pwd;
     private String ID;
@@ -19,12 +22,12 @@ public class CapitalAccount {
     @Column(columnDefinition = "decimal(10,2)")
     private BigDecimal freezing;
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getSecurities_id() {

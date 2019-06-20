@@ -13,6 +13,7 @@ create table security_stock(
     ava_price decimal(10, 5),/*平均持有价格*/
     num integer/*持有数量*/
 );
+insert into security_stock(security_id, stock_id, ava_price, num) values('zfxzfx', 'sh000002', 10.0, 100);
 
 create table instructionset(
      Number int(15)  auto_increment primary key,
@@ -25,6 +26,7 @@ create table instructionset(
      State tinyint(1)
 );
 
+/*
 create table record (
      record_id int auto_increment primary key,
      fund_id varchar(255),
@@ -36,12 +38,14 @@ create table record (
      state tinyint(1)
 );
 drop table record;
+*/
 
 insert into instructionset values(1,'111','123456',0,10000,2019060819270808,20.12,1);
-
 insert into instructionset values(2,'A111','zfx',0,10000,2019060819270808,20.12,1);
 insert into instructionset values(3,'A112','zfx',0,10000,2019060819270808,20.12,1);
+insert into instructionset values(4,'A113','zfx',0,10000,2019060819270808,20.12,0);
 
+insert into instructionset values(5,'sh000002','zfx',0,10000,2019060819270808,20.12,0);
 
 CREATE TABLE `stock_inf` (
   `stock_id` char(10) NOT NULL,
